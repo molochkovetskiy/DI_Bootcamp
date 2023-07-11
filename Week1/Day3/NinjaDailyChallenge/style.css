@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    border: 1px solid green;
+    width: 706px;
+    margin: 20px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    height: 40px;
+    width: 40px;
+    margin: 2px;
+}
+
+/* First */
+
+.box1 {
+    background-color: orange;
+}
+
+.box2 {
+    background-color: pink;
+}
+
+.box3 {
+    background-color: brown;
+}
+
+
+/* Second  */
+
+.box_grey1 {
+    background-color: rgb(209, 211, 212);
+}
+
+.box_grey2 {
+    background-color: rgb(173, 173, 173);
+}
+
+.box_grey3 {
+    background-color: rgb(74, 74, 74);
+}
+
+.box_grey4 {
+    background-color: rgb(38, 42, 45);
+}
+
+/* Third */
+
+#container_third {
+    border: 1px solid green;
+    width: 642px;
+    margin: 20px;
+}
+
+.box_third {
+    height: 40px;
+    width: 40px;
+}
+
+.box_white {
+    background-color: white;
+}
+
+.box_pink {
+    background-color: salmon;
+}
+
+.box_red {
+    background-color: rgb(205, 5, 5);
+}
