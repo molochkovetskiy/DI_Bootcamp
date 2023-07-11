@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background-color: #100;
+}
+
+.navbar a {
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+
+    position: absolute;
+    transform: translatey(-50%);
+    top: 50%;
+}
+
+.navbar .active {
+    right: 0;
+    font-size: 13px;
+    margin-right: 50px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 7px;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    background-color: #100;
+    color: white;
+}
+
+
+#list_of_items {
+    border: 1px solid red;
+    /* display: inline-block; */
+}
+
+.item {
+    border: 1px solid red;
+    display: block;
+    width: 250px;
+    height: 420px;
+    float: left;
+    margin: 10px;
+}
+
+.description {
+    text-align: center;
+}
+
+p {
+    margin: 7px;
+}
+
+p.prices {
+    color: rgb(6, 126, 6);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+s {
+    color: grey;
+    font-size: 14px;
+
+}
+
+.add_to_cart {
+    margin: 7px;
+    padding: 7px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: gray;
+    border: 1px solid gray;
+}
+
+.image_percent {
+    margin: 9px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: rgb(221, 15, 15);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#photo1 {
+    background-image: url(media/image1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 75%;
+}
+
+#photo2 {
+    background-image: url(media/image2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80%;
+}
+
+#photo3 {
+    background-image: url(media/image3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80%;
+}
+
+#photo4 {
+    background-image: url(media/image4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80%;
+}

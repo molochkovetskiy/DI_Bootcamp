@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    height: 800px;
+    border: 2px solid red;
+    background-color: rgb(237, 237, 237);
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+#top {
+    height: 200px;
+    width: 100%;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: row;
+}
+
+#personal {
+    /* border: 2px solid blue; */
+    width: 90%;
+}
+
+#personal #first_name {
+    font-size: 40px;
+}
+
+#personal #last_name {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#personal #profession {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: lightslategray;
+    margin-top: 15px;
+}
+
+#photo {
+    /* border: 2px solid orange; */
+    height: 200px;
+    width: 150px;
+    background: url("media/photo.webp");
+    background-repeat: no-repeat;
+    background-size: 150px auto;
+    border-bottom: 15px solid orange;
+}
+
+#main_information {
+    height: 300px;
+    width: 100%;
+    border: 2px solid green;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 2fr);
+    grid-template-rows: repeat(2, 2fr);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+#contact {
+    grid-column: 1 / span 2;
+}
+
+#profile {
+    grid-column: 3 / span 5;
+}
+
+.description {
+    color: lightslategray;
+}
+
+#education {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+}
+
+.degree {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#work_experience {
+    grid-column: 3 / span 5;
+}
+

@@ -1,0 +1,25 @@
+#container {
+    display: grid;
+    border: 1px solid black;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.child {
+    height: 40px;
+    margin: 10px;
+}
+
+#child1 {
+    background-color: salmon;
+}
+
+#child2 {
+    background-color: lightblue;
+    grid-column: 2 / span 3;
+}
+
+#child3 {
+    background-color: sandybrown;
+    grid-column: 1 /span 3;
+}
