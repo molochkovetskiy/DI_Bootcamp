@@ -1,0 +1,13 @@
+i {
+    margin-right: 10px;
+}
+
+.badge-custom {
+    background-color: gray;
+    color: white;
+}
+
+.badge-circle {
+    border-radius: 50%;
+    padding: 5px 8px;
+}
