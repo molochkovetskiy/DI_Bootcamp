@@ -32,10 +32,22 @@ def make_move(board, player, user_row, user_column):
 def get_player_input(player):
     """Get the user input for the row and column of the move."""
     print(f'\nPlayer {player}\'s turn...\n')
-    user_row = input('Enter row: ')
-    user_column = input('Enter column: ')
 
-    return user_row, user_column
+    # Input validation for row
+    while True:
+        user_row = input('Enter row: ')
+        if user_row.isdigit():
+            break
+        print("Invalid input. Please enter a valid row number.")
+
+    # Input validation for column
+    while True:
+        user_column = input('Enter column: ')
+        if user_column.isdigit():
+            break
+        print("Invalid input. Please enter a valid column number.")
+
+    return int(user_row), int(user_column)
 
 
 def check_win(board):
