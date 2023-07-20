@@ -4,12 +4,12 @@ wordslist = ['correction', 'childish', 'beach', 'python', 'assertive', 'interfer
 word = random.choice(wordslist)
 
 hangman_stages = ['''
-   +---+
-       |
-       |
-       |
-      ===''', '''
-   +---+
+    +---+
+        |
+        |
+        |
+       ===''', '''
+    +---+
     O   |
         |
         |
