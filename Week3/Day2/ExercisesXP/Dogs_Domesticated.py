@@ -1,5 +1,4 @@
 import random 
-# from pets_and_dogs import Dog
 from pets_and_dogs import Dog
 
 class PetDog(Dog):
