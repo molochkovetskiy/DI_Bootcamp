@@ -25,10 +25,13 @@
 # def main():
 #     print("Welcome to Random Sentence Generator!")
 #     print("This program generates a random sentence of a given length.\n")
-#     user_length = input("How long you want the sentence to be? ")
+#     user_length = input("How long would you like your sentence to be? ")
 
 #     file_name = 'words_list.txt'
-#     file_path = os.path.join(os.getcwd(), file_name)
+
+#     for root, dirs, files in os.walk(os.getcwd()):
+#         if file_name in files:
+#             file_path = os.path.join(root, file_name)
 
 #     if is_valid_length(user_length) is True:
 #         words_of_list = get_words_from_file(file_path)
