@@ -51,8 +51,16 @@
 -- Add a row which references a customer by ID, but does not reference an item by ID (leave it blank).
 -- Does this work? Why/why not?
 
+-- INSERT INTO purchases (customer_id, item_id, quantity_purchased)
+-- VALUES (
+--     (SELECT id FROM customers WHERE first_name = 'Scott' AND last_name = 'Scott'),
+--     NULL,
+--     11
+-- );
+
 -- Answer:
--- If you attempt to insert a row into the "purchases" table with a valid "customer_id" (existing in the "customers" table)
--- but a NULL or blank "item_id," it will not work.
--- The database will raise a foreign key constraint violation error because the foreign key "item_id" cannot have a NULL value
--- or an invalid reference to the "items" table.
+
+-- This will work if the "customer_id" obtained from the subquery is valid and there is no foreign key constraint
+-- that enforces a valid reference for the "item_id" column.
+-- If the "item_id" column has a foreign key constraint that does not allow NULL values or requires a valid reference,
+-- the INSERT statement will fail.
