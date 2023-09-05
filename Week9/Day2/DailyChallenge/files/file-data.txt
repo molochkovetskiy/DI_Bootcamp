@@ -1,0 +1,1 @@
+Simple string from file-data.txt
