@@ -1,6 +1,6 @@
 // Validation Middleware
 
-function validateTaskData(req, res, next) {
+const validateTaskData = (req, res, next) => {
     const { title, description } = req.body;
 
     if (!title || !description) {
@@ -8,14 +8,13 @@ function validateTaskData(req, res, next) {
     }
 
     next();
-}
+};
 
 // Error Handling Middleware
-function errorHandler(err, req, res, next) {
+const errorHandler = (err, req, res, next) => {
     console.error(err.stack);
-    console.log('RUUUUNNNN');
     res.status(500).json({ msg: 'Internal server error' });
-}
+};
 
 module.exports = {
     validateTaskData,

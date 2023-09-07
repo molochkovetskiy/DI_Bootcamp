@@ -4,18 +4,18 @@ const fs = require('fs').promises;
 const tasksFilePath = './config/tasks.json';
 
 // GET - Retrieve a list of all tasks from the JSON file
-const getAllTasks = async (req, res) => {
+const getAllTasks = async (req, res, next) => {
     try {
         const data = await fs.readFile(tasksFilePath, 'utf-8');
         const tasks = JSON.parse(data);
         res.json(tasks);
     } catch (err) {
-        res.status(500).json({ msg: 'Internal server error' })
+        next(err);
     }
 };
 
 // GET - Retrieve a specific task by ID from the JSON file
-const getTask = async (req, res) => {
+const getTask = async (req, res, next) => {
     const taskId = req.params.id;
 
     try {
@@ -29,12 +29,12 @@ const getTask = async (req, res) => {
 
         res.status(200).json(task);
     } catch (err) {
-        res.status(500).json({ msg: 'Internal server error' })
+        next(err);
     }
 };
 
 // POST - Create a new task and store it in the JSON file
-const createTask = async (req, res) => {
+const createTask = async (req, res, next) => {
     const { title, description } = req.body;
 
     try {
@@ -58,12 +58,12 @@ const createTask = async (req, res) => {
 
         res.status(201).json(tasks);
     } catch (err) {
-        res.status(500).json({ error: 'Internal server error' });
+        next(err);
     }
 };
 
 // PUT - Update a task by ID in the JSON file
-const updateTask = async (req, res) => {
+const updateTask = async (req, res, next) => {
     const taskId = req.params.id;
     const { title, description } = req.body;
 
@@ -85,13 +85,13 @@ const updateTask = async (req, res) => {
         await fs.writeFile(tasksFilePath, JSON.stringify(tasks, null, 2));
 
         res.json({ tasks });
-    } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+    } catch (err) {
+        next(err);
     }
 };
 
 // DELETE - Delete a task by ID from the JSON file
-const deleteTask = async (req, res) => {
+const deleteTask = async (req, res, next) => {
     const taskId = req.params.id;
 
     try {
@@ -108,8 +108,8 @@ const deleteTask = async (req, res) => {
         await fs.writeFile(tasksFilePath, JSON.stringify(tasks, null, 2));
 
         res.json(tasks);
-    } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+    } catch (err) {
+        next(err);
     }
 };
 

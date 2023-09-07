@@ -1,13 +1,18 @@
 const express = require('express');
 
-const tasks_router = express.Router();
-tasks_router.use(express.json());
+// Create a router for tasks
+const tasksRouter = express.Router();
 
+// Middleware for parsing JSON requests
+tasksRouter.use(express.json());
+
+// Import necessary middleware functions
 const {
     validateTaskData,
     errorHandler,
 } = require('../middlewares/utils.js')
 
+// Import controller functions for tasks
 const {
     getAllTasks,
     getTask,
@@ -16,14 +21,19 @@ const {
     deleteTask,
 } = require('../controllers/tasks.controller.js');
 
-tasks_router.get('/', getAllTasks);
+// Define routes for the tasks
+tasksRouter.get('/', getAllTasks);
 
-tasks_router.get('/:id', getTask);
+tasksRouter.get('/:id', getTask);
 
-tasks_router.post('/', validateTaskData, createTask);
+tasksRouter.post('/', validateTaskData, createTask);
 
-tasks_router.put('/:id', validateTaskData, updateTask);
+tasksRouter.put('/:id', validateTaskData, updateTask);
 
-tasks_router.delete('/:id', deleteTask);
+tasksRouter.delete('/:id', deleteTask);
 
-module.exports = { tasks_router };
+// Apply the global error handling middleware to handle errors
+tasksRouter.use(errorHandler);
+
+// Export the tasksRouter for use in your main application
+module.exports = { tasksRouter };
